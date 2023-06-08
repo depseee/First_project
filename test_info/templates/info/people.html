@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People</title>
+</head>
+<body>
+    <h2>Информации о людях</h2><br>
+    <ul>
+        {% for i in people %}
+            <li><h5 style="font-family: Arial Black">ФИО - {{ i.name }}</h5></li>
+            <li><h5 style="font-family: Arial">Возраст - {{ i.age }}</h5></li>
+            <li><h5 style="font-family: Arial">Телефон - {{ i.phone }}</h5><br></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

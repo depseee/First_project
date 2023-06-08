@@ -21,12 +21,11 @@ zodiac_dict = {
 
 
 def index(request):
-    list_zodiac = list(zodiac_dict)
-    res = ''
-    for i in list_zodiac:
-        redirect_path = reverse('zodiac-name', args=[i])
-        res += f"<li><a href='{redirect_path}'>{i.title()}</a></li>"
-    return HttpResponse(f'<ul>{res}</ul>')
+    zodiacs = list(zodiac_dict)
+    context = {
+        'zodiacs': zodiacs
+    }
+    return render(request, 'horoscope/index.html', context)
 
 
 def info_about_zodiac(request, zodiac: str):

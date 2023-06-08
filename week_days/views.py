@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
+from django.template.loader import render_to_string
 
 # Create your views here.
 
@@ -27,3 +28,8 @@ def get_info_about_day_by_num(request, day: int):
     res_day = days[day - 1]
     redirect_url = reverse('week_days-name', args=(res_day,))
     return HttpResponseRedirect(redirect_url)
+
+
+def template_test(request):
+    response = render_to_string('week_days/greeting.html')
+    return HttpResponse(response)
