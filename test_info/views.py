@@ -46,3 +46,7 @@ def people_info(request):
         'people': people,
     }
     return render(request, 'info/people.html', context)
+
+
+def table(request):
+    return render(request, 'info/table.html')
